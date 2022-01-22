@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>코시국</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="intro">
+    <div class="fullBackground">
+        <div class="overlay">
+            <div class="textWrap">
+                <h1><em>코로나</em>&nbsp대중교통에 미친 영향은</h1>
+                <p>다양한 지표를 통해 코로나 전과 후로 대중교통 이용량이 어떻게 변했는지 알아보자</p>
+                <a href="{{ url_for('subway_info') }}">둘러보기</a>
+            </div>
+        </div>
+    </div>
+</div>  
+<script src="{{ url_for('static', filename='js/jquery.js') }}" ></script>
+<script src="{{ url_for('static', filename='js/fullclip.js') }}" ></script>
+
+
+<script>
+$('.fullBackground').fullClip({
+    images: ["{{ url_for('static', filename='img/1.png') }}", "{{ url_for('static', filename='img/2.png') }}", "{{ url_for('static', filename='img/3.png') }}"],
+    transitionTime: 1000,
+    wait: 3000
+})
+</script>
+<script src="{{ url_for('static', filename='js/sidetab.js') }}"></script>
+</body>
+</html>
